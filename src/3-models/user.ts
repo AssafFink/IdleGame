@@ -1,6 +1,7 @@
 import { Document, Schema } from "mongoose";
 import { dal } from "../2-utils/dal";
 
+//Creates Users
 export interface IUserModel extends Document {
     email: string;
     username: string;
