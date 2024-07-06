@@ -36,7 +36,6 @@ export const SkillSchema = new Schema<ISkillModel>({
     icon: {
         type: String,
         maxlength: 250,
-        match: [/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/, "Invalid Icon."],
         trim: true,
         lowercase: true,
         unique: true
