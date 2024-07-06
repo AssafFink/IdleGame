@@ -4,8 +4,10 @@ import { dal } from "../2-utils/dal";
 export interface IConsumableModel extends Document {
     name: string;
     description: string;
+    icon: string;
     skillSpeed: number;
     skillSpeedTime: number;
+
 }
 
 export const ConsumableSchema = new Schema<IConsumableModel>({
@@ -20,6 +22,13 @@ export const ConsumableSchema = new Schema<IConsumableModel>({
     description: {
         type: String,
         required: [true, "Missing Description."],
+        maxlength: 255,
+        trim: true,
+        unique: true
+    },
+    icon: {
+        type: String,
+        required: [true, "Missing icon."],
         maxlength: 255,
         trim: true,
         unique: true
